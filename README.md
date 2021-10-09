@@ -12,3 +12,4 @@ TODO: Write to more output files to get more path coverage.
 ./a.out test-dir/index.jpeg
 A file with random filename and extension .png will be stored in main folder.
 ### Fuzzing with AFL
+afl-fuzz -i test-dir/ -o out-dir/ ./a.out @@
