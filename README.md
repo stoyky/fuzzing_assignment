@@ -1,1 +1,1 @@
-# fuzzing_assignment
+# Software Security Fuzzing Assignment
