@@ -1,0 +1,1 @@
+sudo afl-fuzz -i test-dir/ -o out-dir/ ../../lightgbm config=@@
