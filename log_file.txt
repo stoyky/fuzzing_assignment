@@ -1,1 +1,0 @@
-1.png >> test-dir/Logo-Test.png
