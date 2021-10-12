@@ -1,17 +1,16 @@
 # Software Security Fuzzing Assignment
 ## Target: FreeImage 3.8.1
 
-"load_single_out_png.cpp" takes as command line input a single file and outputs a PNG.
+Install FreeImage and AFL:
 
-TODO: Write to more output files to get more path coverage.
-
-### Build
-/usr/local/bin/afl-g++ load_single_out_png.cpp -lfreeimage
-### Run
-./a.out filename
-### Example
-./a.out test-dir/index.jpeg
-
-A file with random filename and extension .png will be stored in main folder.
-### Fuzzing with AFL
-afl-fuzz -i test-dir/ -o out-dir/ ./a.out @@
+1. AFL
+	- Clone this AFL repository: https://github.com/google/AFL.git
+	- Install AFL with `make` and `make install`
+2. FreeImage
+	- Clone this FreeImage repository: https://github.com/WinMerge/freeimage.git
+	- Add `CC = ~/AFL/afl-gcc` and `CXX = ~/AFL/afl-g++` to Makefile.gnu
+	- Do `make` and `make install` to install the C++ FreeImage library and the AFL instrumentation.
+3. Fuzzing project
+	- Clone this repository: https://github.com/stoyky/fuzzing_assignment.git
+	- Build the example file with `~/AFL/afl-g++ load_single_out_png.cpp -lfreeimage`
+	- Fuzz with `./afl-fuzz -i ~/fuzzing_assignment/test-dir/ -o ~/fuzzing_assignment/out-dir/ ~/fuzzing_assignment/a.out @@`
