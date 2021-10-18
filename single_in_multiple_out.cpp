@@ -153,7 +153,7 @@ main(int argc, char *argv[]) {
 
 	int num_formats = 11;
 	int file_fmt[] = {
-			BMP_DEFAULT,
+			FIF_IFF,
 			TARGA_DEFAULT,
 			PSD_DEFAULT,
 			JXR_DEFAULT,
@@ -166,7 +166,7 @@ main(int argc, char *argv[]) {
 			PNM_DEFAULT
 	};
 	const char* file_ext[] = {
-			".bmp",
+			".iff",
 			".tga",
 			".psd",
 			".jxr",

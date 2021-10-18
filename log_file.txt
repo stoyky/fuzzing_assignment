@@ -1,4 +1,4 @@
-0.bmp >> test-dir/3.webp
+FAILED >> test-dir/3.webp
 1.tga >> test-dir/3.webp
 2.psd >> test-dir/3.webp
 FAILED >> test-dir/3.webp
