@@ -1,0 +1,11 @@
+0.bmp >> test-dir/3.webp
+1.tga >> test-dir/3.webp
+2.psd >> test-dir/3.webp
+FAILED >> test-dir/3.webp
+4.webp >> test-dir/3.webp
+5.tiff >> test-dir/3.webp
+6.jpeg >> test-dir/3.webp
+FAILED >> test-dir/3.webp
+FAILED >> test-dir/3.webp
+FAILED >> test-dir/3.webp
+FAILED >> test-dir/3.webp
