@@ -12,5 +12,5 @@ Install FreeImage and AFL:
 	- Do `make` and `make install` to install the C++ FreeImage library and the AFL instrumentation.
 3. Fuzzing project
 	- Clone this repository: https://github.com/stoyky/fuzzing_assignment.git
-	- Build the example file with `~/AFL/afl-g++ load_single_out_png.cpp -lfreeimage`
+	- Build the example file with `~/AFL/afl-g++ single_in_multiple_out.cpp -lfreeimage`
 	- Fuzz with `./afl-fuzz -i ~/fuzzing_assignment/test-dir/ -o ~/fuzzing_assignment/out-dir/ ~/fuzzing_assignment/a.out @@`
