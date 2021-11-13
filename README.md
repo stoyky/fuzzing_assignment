@@ -16,7 +16,10 @@ Install FreeImage and AFL:
         - (Add `CFLAGS += -m32`, `CXXFLAGS += -m32`, and `LDFLAGS += -m32` to Makefile.gnu for 32-bit version)
 	- Do `make` and `sudo make install` to install the C++ FreeImage library and the AFL instrumentation.
         - (Or `AFL_USE_ASAN=1 make` and `sudo make install` for ASAN)
-4. Test suite
+4. Radamsa
+	- `git clone https://github.com/Hwangtaewon/radamsa.git && cd radamsa`
+	- `make` and `sudo make install`
+5. Test suite
 	- Install pip with `sudo apt install python3-pip`
 	- Install gdown with `pip3 install gdown`
 	- Get corpus from Google drive with `~/.local/bin/gdown --id 149CJ2AmLqBrRnwMzVKVIW5tKurEDda_z`
@@ -24,7 +27,7 @@ Install FreeImage and AFL:
 	- Delete files at least 100 kB with `find All/ -type 'f' -size +99k -delete`
 	- (Run Radamsa: `radamsa -o All/fuzz-%n.%s -n 10000 All/*`)
 	- Run afl-cmin: `~/AFL/afl-cmin -i All/ -o All-minimized/ -m 8000 -t 2000 ~/fuzzing_assignment/a.out @@`
-5. Fuzzing project
+6. Fuzzing project
 	- Clone this repository: https://github.com/stoyky/fuzzing_assignment.git
 	- Build the example file with `~/AFL/afl-g++ single_in_multiple_out.cpp -lfreeimage`
         - (Optionally with `-m32` for 32-bit version and/or `AFL_USE_ASAN=1` for ASAN)
