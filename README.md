@@ -22,7 +22,7 @@ Install FreeImage and AFL:
 	- Get corpus from Google drive with `~/.local/bin/gdown --id 149CJ2AmLqBrRnwMzVKVIW5tKurEDda_z`
 	- Unzip corpus with `sudo apt install unzip` and `unzip All.zip`
 	- Delete files at least 100 kB with `find All/ -type 'f' -size +99k -delete`
-	- (Run Radamsa: `radamsa -o All/fuzz-%n.%s -n 10000 All/`)
+	- (Run Radamsa: `radamsa -o All/fuzz-%n.%s -n 10000 All/*`)
 	- Run afl-cmin: `~/AFL/afl-cmin -i All/ -o All-minimized/ -m 8000 -t 2000 ~/fuzzing_assignment/a.out @@`
 5. Fuzzing project
 	- Clone this repository: https://github.com/stoyky/fuzzing_assignment.git
