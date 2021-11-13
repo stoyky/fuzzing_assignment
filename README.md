@@ -21,10 +21,12 @@ Install FreeImage and AFL:
 	- Install gdown with `pip3 install gdown`
 	- Get corpus from Google drive with `~/.local/bin/gdown --id 149CJ2AmLqBrRnwMzVKVIW5tKurEDda_z`
 	- Unzip corpus with `sudo apt install unzip` and `unzip All.zip`
-	- Delete files at least 1 MB with `find All/ -type 'f' -size +999k -delete`
+	- Delete files at least 100 kB with `find All/ -type 'f' -size +99k -delete`
+	- (Run Radamsa: `radamsa -o All/fuzz-%n.%s -n 10000 All/`)
+	- Run afl-cmin: `~/AFL/afl-cmin -i All/ -o All-minimized/ -m 8000 -t 2000 ~/fuzzing_assignment/a.out @@`
 5. Fuzzing project
 	- Clone this repository: https://github.com/stoyky/fuzzing_assignment.git
 	- Build the example file with `~/AFL/afl-g++ single_in_multiple_out.cpp -lfreeimage`
         - (Optionally with `-m32` for 32-bit version and/or `AFL_USE_ASAN=1` for ASAN)
         - Write `echo core >/proc/sys/kernel/core_pattern` inside the file _/proc/sys/kernel/core_pattern_
-	- Fuzz with `./afl-fuzz -m 8000 -t 10000+ -i ~/path/to/corpus/All/ -o ~/fuzzing_assignment/out-dir/ ~/fuzzing_assignment/a.out @@`
+	- Fuzz with `./afl-fuzz -m 8000 -t 2000+ -i ~/path/to/corpus/All/ -o ~/fuzzing_assignment/out-dir/ ~/fuzzing_assignment/a.out @@`
