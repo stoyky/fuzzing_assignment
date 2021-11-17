@@ -10,7 +10,8 @@
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     FIMEMORY *mem;
     FIBITMAP *dib;
-    int length, height, bpp, y;
+    FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
+    BOOL bSuccess = FALSE;
 
     FreeImage_Initialise(true);
 
@@ -19,15 +20,20 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
         return 0;
 
     dib = FreeImage_LoadFromMemory(FIF_TIFF, mem, TIFF_DEFAULT);
-    if (!dib)
-        return 0;
 
-    bpp = FreeImage_GetBPP(dib);
-    length = FreeImage_GetWidth(dib);
-    height = FreeImage_GetHeight(dib);
-
-    for (y = 0; y < height; y++)
-        FreeImage_GetScanLine(dib, y);
+  	if(dib) {
+  		// try to guess the file format from the file extension
+  		fif = FreeImage_GetFileTypeFromMemory(mem);
+  		if(fif != FIF_UNKNOWN ) {
+  			// check that the plugin has sufficient writing and export capabilities ...
+  			WORD bpp = FreeImage_GetBPP(dib);
+  			if(FreeImage_FIFSupportsWriting(fif) && FreeImage_FIFSupportsExportBPP(fif, bpp)) {
+  				// ok, we can save the file
+  				bSuccess = FreeImage_Save(fif, dib, "testfile", 0);
+  				// unless an abnormal bug, we are done !
+  			}
+  		}
+  	}
 
     FreeImage_Unload(dib);
     FreeImage_CloseMemory(mem);
