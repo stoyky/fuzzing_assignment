@@ -33,3 +33,8 @@ Install FreeImage and AFL:
         - (Optionally with `-m32` for 32-bit version and/or `AFL_USE_ASAN=1` for ASAN)
         - Write `echo core >/proc/sys/kernel/core_pattern` inside the file _/proc/sys/kernel/core_pattern_
 	- Fuzz with `./afl-fuzz -m 8000 -t 2000+ -i ~/path/to/corpus/All/ -o ~/fuzzing_assignment/out-dir/ ~/fuzzing_assignment/a.out @@`
+
+7. Libfuzzer
+	- Install clang with `sudo apt install clang`
+	- Compile fuzzing target with `clang -g -O1 -fsanitize=fuzzer libfuzzer_simo.cpp -lfreeimage`
+	- Run a out and specify test directory as first argument `./a.out ~/Downloads/All`
