@@ -1,0 +1,30 @@
+start_time        : 1636809539
+last_update       : 1637239334
+fuzzer_pid        : 92458
+cycles_done       : 0
+execs_done        : 6630913
+execs_per_sec     : 3.14
+paths_total       : 6674
+paths_favored     : 876
+paths_found       : 6404
+paths_imported    : 0
+max_depth         : 2
+cur_path          : 64
+pending_favs      : 876
+pending_total     : 6660
+variable_paths    : 0
+stability         : 100.00%
+bitmap_cvg        : 35.90%
+unique_crashes    : 26
+unique_hangs      : 63
+last_path         : 1637236611
+last_crash        : 1637194832
+last_hang         : 1637125861
+execs_since_crash : 574138
+exec_timeout      : 2000
+afl_banner        : a.out
+afl_version       : 2.57b
+target_mode       : default
+command_line      : afl-fuzz -t 2000+ -i test-suite/All/ -o fuzzing_assignment/out-dir-afl-only/ /home/aVanVeen/fuzzing_assignment/a.out @@
+slowest_exec_ms   : 1994
+peak_rss_mb       : not available while afl is running
