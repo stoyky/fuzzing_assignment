@@ -1,0 +1,11 @@
+FAILED >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+1.tga >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+2.psd >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+3.jxr >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+FAILED >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+5.tiff >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+6.jpeg >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+FAILED >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+8.j2k >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+9.jp2 >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
+FAILED >> id:000010,sig:06,src:000005,time:403892358,op:int16,pos:159,val:-128
